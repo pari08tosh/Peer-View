@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="images/favicon.png"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/0461c7f482.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Peer View</title>
+</head>
+<body>
+    <div class="home-div center-align white-text">
+        <div class="github-logo right-align">
+            <a target="_blank" href="https://github.com/pari08tosh"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+        </div>
+        <img class="responsive-img" src="images/logo.png">    
+        <p grey-text text-lighten-2 style="font-size: 120%">Enjoy a secure, login free video chat experience.</p>
+        <div class="buttons">
+            <a class="waves-effect transparent waves-light btn create-room">Create a room</a>
+            <a class="waves-effect transparent waves-light btn join-room">Join a room</a>
+        </div>
+        <div class="room-code">
+            <form id="room-code-form">
+                <div class="input-field">
+                    <input id="room" type="text" required data-length="5" class="validate">
+                    <label style="font-size: 120%" data-error="Enter 5 character room code" for="room">Room Code</label>
+                </div>
+                <button type="submit" class="waves-effect transparent waves-light btn enter-room">Join</button type="submit">
+            </form>
+        </div>
+    </div>
+
+
+    <div class="chat-div">
+        <div class="grid header-grid">
+            <div class="row">
+                <div class="col s6">
+                    <img class="responsive-img" src="images/logo.png">
+                </div>
+                <div class="col s6 right-align chat-room">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="fixed-action-btn click-to-toggle">
+            <a class="btn-floating indigo">
+                <i class="fa fa-sliders" aria-hidden="true"></i>
+            </a>
+            <ul>
+                <li><button id="full-screen-btn"  class="btn-floating tooltipped grey" data-position="right" data-delay="50" data-tooltip="Go Fullscreen"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button></li>
+                <li><button id="mute-chat" data-position="right" data-delay="50" data-tooltip="Mute Chat Sounds" class="btn-floating grey tooltipped"><i class="fa fa-bell-slash-o" aria-hidden="true"></i></button></li>
+                <li><button id="disconnect-btn" data-position="right" data-delay="50" data-tooltip="Disconnect" class="btn-floating red tooltipped"><i class="fa fa-phone" aria-hidden="true"></i></button></li>
+                <li><button id="mute-btn" data-position="right" data-delay="50" data-tooltip="Disable Mic" class="btn-floating grey tooltipped"><i class="fa fa-microphone-slash" aria-hidden="true"></i></button></li>
+                <li><button id="hide-video" data-position="right" data-delay="50" data-tooltip="Hide Video" class="btn-floating grey tooltipped"><i class="fa fa-eye-slash" aria-hidden="true"></i></button></li>
+            </ul>
+        </div>
+        <div class="grid video-grid">
+            <div class="row">
+                <div class="col l8">
+                    <div class="waiting-div center-align">
+                        <h4>Waiting For Your Friend</h4>
+                        <div class="loader">Loading...</div>
+                    </div>
+                    <div class="connecting-div center-align">
+                        <h4>Connecting...</h4>
+                    </div>
+                    <div class="disconnected-div center-align">
+                        <h4>Chat Disconnected</h4>
+                        <p style="font-size: 120%;">Your friend left the room. Disconnecting...</p>
+                        <div class="loader">Loading...</div>
+                    </div>
+                    <video id="myVideo" muted class="responsive-video"></video>
+                    <video id="remoteVideo" class="responsive-video"></video>
+                </div>
+                <div class="col l4">
+                </div>
+            </div>
+        </div>
+        <div class="text-div">
+            <div class="chat-box">
+                
+            </div>
+            <div class="divider"></div>
+            <form id="chat-form">
+                <div class="grid input-grid">
+                    <div class="row">
+                        <div class="input-field col s10">
+                            <textarea id="chat-message" data-emojiable="true" disabled type="text" class="validate"></textarea>
+                            <label for="chat-message">Your Message</label>
+                        </div>
+                        <div class="col s2 valign-wrapper">
+                            <button type="submit" disabled class="waves-effect waves-light btn-floating indigo send-message"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.slim.js"></script>
+        <script src="js/script.js"></script>
+    </div> 
+    <div class="audio-div">
+        <audio id="receive-message" src="assets/send-message.ogg"></audio>
+    </div>
+</body>
+</html>

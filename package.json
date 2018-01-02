@@ -1,0 +1,34 @@
+{
+  "name": "peerview",
+  "version": "1.0.0",
+  "description": "A simple peer-to-peer chat service build with webRTC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp serve",
+    "build": "gulp build"
+  },
+  "keywords": [
+    "chat",
+    "peerview",
+    "webrtc"
+  ],
+  "author": "Paritosh Sharma",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.19.0",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglify-es": "^0.1.9"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "randomstring": "^1.1.5",
+    "simple-peer": "^8.2.0",
+    "socket.io": "^2.0.4"
+  }
+}
